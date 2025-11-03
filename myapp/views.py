@@ -7,12 +7,12 @@ def home(request):
 
 def add_student(request):
     if request.method == 'POST':
-        form = StudentForm(request.POST)  # ✅ Form use karo
-        if form.is_valid():                # ✅ Validation chalega
-            form.save()                    # ✅ Agar valid hai to save karo
+        form = StudentForm(request.POST)  
+        if form.is_valid():                
+            form.save()                    
             return redirect('display_student')
     else:
-        form = StudentForm()               # ✅ Empty form show karo
+        form = StudentForm()               
 
     return render(request, 'myapp/add_student.html', {'form': form})
 
