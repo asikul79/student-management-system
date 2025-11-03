@@ -1,0 +1,220 @@
+/* ===== Global Styling ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    color: #fff;
+    padding: 30px;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+    color: #fff;
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Form Styling ===== */
+form {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 35px;
+    margin-top: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 500;
+    color: #e2e2e2;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+}
+
+form input:focus {
+    border: 2px solid #00f5d4;
+    box-shadow: 0 0 6px #00f5d4;
+}
+
+/* ===== Buttons ===== */
+
+button,
+a {
+    background: linear-gradient(135deg, #00f5d4, #00bbf9);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+button:hover,
+a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00f5d4;
+}
+
+/* Delete / Back Button Styling */
+button[onclick] {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    color: white;
+}
+
+button[onclick]:hover {
+    box-shadow: 0 0 15px #ff4b2b;
+    transform: scale(1.06);
+}
+
+/* ===== Home Page Buttons Grid ===== */
+.home-button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 buttons per row */
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.home-button-container button {
+    background: linear-gradient(135deg, #00f5d4, #00bbf9);
+    color: #000;
+    font-weight: 600;
+    padding: 15px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    /* fill the grid column */
+}
+
+.home-button-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00f5d4;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    /* बटन के बीच 10px का अंतर */
+    justify-content: flex-start;
+    /* बटन left-align रहेंगे */
+    align-items: center;
+}
+
+
+/* ===== Update & Delete Buttons ===== */
+.update-btn {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: #fff;
+}  
+
+.update-btn:hover {
+    box-shadow: 0 0 15px #2ecc71;
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    color: #fff;
+}
+ .delete-btn:hover {
+    box-shadow: 0 0 15px #ff4b2b;
+}
+
+/* ===== Table Styling ===== */
+table {
+    width: 95%;
+    max-width: 900px;
+    color: #fff;
+    border-collapse: collapse;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+th {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    form, table {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 22px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

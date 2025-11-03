@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studenet Management System</title>
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+
+<body>
+    <h2> Welcome to Student Mangement System</h2>
+    <div class="home-button-container">
+        <button onclick="location.href='{% url 'add_student' %}'">Add Student</button>
+        <button onclick="location.href='{% url 'display_student' %}'">Display Student</button>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Students</title>
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+
+<body>
+    <h2>All Students</h2>
+
+    {% if students %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Roll No</th>
+                <th>Subject</th>
+                <th>City</th>
+                <th>DOB</th>
+                <th>Created</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.last_name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.roll_no }}</td>
+                <td>{{ student.subject }}</td>
+                <td>{{ student.city }}</td>
+                <td>{{ student.dob }}</td>
+                <td>{{ student.create_at|date:"Y-m-d H:i" }}</td>
+                <td>
+                    <div class="action-buttons">
+                        <a href="{% url 'update_student' student.id %}" class="update-btn">Update</a> |
+                        <a href="{% url 'delete_student' student.id %}" class="delete-btn">Delete</a>
+                    </div>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No student found</p>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'add_student' %}">Add new student</a><br><br>
+    <button onclick="location.href='{% url 'home' %}'">Back to Home</button>
+</body>
+
+</html>

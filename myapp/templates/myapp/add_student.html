@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student</title>
+  <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+
+<body>
+  <h2>Add Student Form</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="first_name">FirstName</label>
+    <input type="text" name="first_name" required pattern="[A-Za-z]+" title="Please enter letters"> <br>
+    <label for=" last_name">LastName</label>
+    <input type="text" name="last_name" required pattern="[A-Za-z]+" title="Please enter letters"><br>
+    <label for="email">email</label>
+    <input type="text" name="email" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="please enter email"><br>
+    <label for="roll_no">RollNo</label>
+    <input type="text" name="roll_no" required pattern="[0-9]+" title="only numbers allowed"><br>
+    <label for="subject">subject</label>
+    <input type="text" name="subject" required pattern="[A-Za-z]+" title="Please enter letters"><br>
+    <label for="city">City</label>
+    <input type="text" name="city" required pattern="[A-Za-z]+" title="Please enter letters"><br>
+    <label for="dob">dob</label>
+    <input type="date" name="dob" required>
+
+    <button type="submit">Add</button>
+
+  </form>
+  <button onclick="location.href='{% url 'home' %}'">Back</button>
+</body>
+
+</html>
