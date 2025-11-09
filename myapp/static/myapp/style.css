@@ -1,4 +1,4 @@
-/* ===== Global Styling ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 * {
@@ -19,7 +19,6 @@ body {
     padding: 30px;
 }
 
-/* ===== Headings ===== */
 h1, h2 {
     color: #fff;
     margin-top: 40px;
@@ -29,7 +28,6 @@ h1, h2 {
     text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== Form Styling ===== */
 form {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
@@ -67,7 +65,6 @@ form input:focus {
     box-shadow: 0 0 6px #00f5d4;
 }
 
-/* ===== Buttons ===== */
 
 button,
 a {
@@ -89,7 +86,6 @@ a:hover {
     box-shadow: 0 0 15px #00f5d4;
 }
 
-/* Delete / Back Button Styling */
 button[onclick] {
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
     color: white;
@@ -100,11 +96,9 @@ button[onclick]:hover {
     transform: scale(1.06);
 }
 
-/* ===== Home Page Buttons Grid ===== */
 .home-button-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 buttons per row */
     gap: 20px;
     width: 90%;
     max-width: 1000px;
@@ -122,7 +116,7 @@ button[onclick]:hover {
     font-size: 16px;
     transition: 0.3s ease-in-out;
     width: 100%;
-    /* fill the grid column */
+   
 }
 
 .home-button-container button:hover {
@@ -134,14 +128,14 @@ button[onclick]:hover {
     display: flex;
     gap: 10px;
     margin-top: 5px;
-    /* बटन के बीच 10px का अंतर */
+   
     justify-content: flex-start;
-    /* बटन left-align रहेंगे */
+ 
     align-items: center;
 }
 
 
-/* ===== Update & Delete Buttons ===== */
+
 .update-btn {
     background: linear-gradient(135deg, #27ae60, #2ecc71);
     color: #fff;
@@ -159,7 +153,6 @@ button[onclick]:hover {
     box-shadow: 0 0 15px #ff4b2b;
 }
 
-/* ===== Table Styling ===== */
 table {
     width: 95%;
     max-width: 900px;
@@ -191,7 +184,7 @@ tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ===== Animation ===== */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -203,7 +196,7 @@ tr:hover {
     }
 }
 
-/* ===== Responsive ===== */
+
 @media (max-width: 600px) {
     form, table {
         width: 95%;
